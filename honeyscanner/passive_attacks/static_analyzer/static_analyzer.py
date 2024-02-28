@@ -68,8 +68,9 @@ class StaticAnalyzer:
             data = json.load(file)
 
         # Filter results based on severity
+        # print(data)
         filtered_results = [
-            result for result in data["results"]
+            result for result in data[version]["results"]
             if result["issue_severity"] in ["HIGH", "MEDIUM"]
         ]
 
@@ -86,7 +87,7 @@ class StaticAnalyzer:
             version: {
                 "summary": summary,
                 "results": [
-                    result for result in data["results"]
+                    result for result in data[version]["results"]
                     if result["issue_severity"] in ["HIGH", "MEDIUM"]
                 ]
             }

@@ -1,4 +1,4 @@
-from honeypots import Cowrie, Kippo, Dionaea, Conpot
+from honeypots import Cowrie
 from passive_attacks import AttackOrchestrator as PassiveAttackOrchestrator
 from active_attacks import AttackOrchestrator as ActiveAttackOrchestrator
 from report_generator import ReportGenerator
@@ -13,13 +13,10 @@ class Honeyscanner:
         self.report_generator = ReportGenerator(self.honeypot)
 
     def create_honeypot(self, honeypot_type, honeypot_version, honeypot_ip, honeypot_port, honeypot_username, honeypot_password):  
-        honeypot_class_map = {  
-            'cowrie': Cowrie,  
-            'kippo': Kippo,
-            'dionaea': Dionaea,
-            'conpot': Conpot
-        }  
-        if honeypot_type not in honeypot_class_map:  
+        honeypot_class_map = {
+            'cowrie': Cowrie,
+        }
+        if honeypot_type not in honeypot_class_map:
             supported_honeypots = ', '.join(honeypot_class_map.keys())
             raise ValueError(f"Unsupported honeypot type: {honeypot_type}. Supported honeypots are: {supported_honeypots}")  
         return honeypot_class_map[honeypot_type](honeypot_version, honeypot_ip, honeypot_port, honeypot_username, honeypot_password)

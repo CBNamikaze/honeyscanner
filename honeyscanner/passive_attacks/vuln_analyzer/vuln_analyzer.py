@@ -3,6 +3,7 @@ import sys
 import json
 import time
 import requests
+from requests.auth import HTTPBasicAuth
 import datetime
 from packaging.version import parse as pkg_version_parse
 from packaging.specifiers import SpecifierSet
@@ -140,11 +141,12 @@ class VulnerableLibrariesAnalyzer:
         """
         if not cve:
             return None
-
-        url = f"https://services.nvd.nist.gov/rest/json/cve/1.0/{cve}"
-        response = requests.get(url)
-        time.sleep(2)  # Wait for 2 seconds to avoid rate limit
-
+        auth = HTTPBasicAuth('apikey', '6df4d475-86a9-4fab-bebd-ca883f62dd1e')
+        headers = {'apiKey': '6df4d475-86a9-4fab-bebd-ca883f62dd1e'}
+        url = f"https://services.nvd.nist.gov/rest/json/cves/2.0?cveId={cve}"
+        response = requests.get(url, auth=auth, headers=headers)
+        # time.sleep(6)  # Wait for 2 seconds to avoid rate limit
+        print(response)
         if response.status_code == 200:
             data = response.json()
             if 'result' in data:
