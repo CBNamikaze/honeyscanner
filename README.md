@@ -1,10 +1,4 @@
-<h3>Commands to Run</h3>
-<li>To Run Cowrie: /home/cowrie/cowrie/bin/cowrie start</li>
-<li>To Stop Cowrie: /home/cowrie/cowrie/bin/cowrie stop</li>
-<li>To Activate venv: source /home/cowrie/cowrie-env/bin/activate</li>
-<li>To Run HoneyScanner: python3 /home/cowrie/honeyscanner/honeyscanner/main.py --honeypot cowrie --honeypot_version 2.5.0 --target_ip 127.0.0.1 --port 2222 --username root --password 1234</li>
-<br></br>
-<br></br>
+
 # Honeyscanner - A vulnerability analyzer for Honeypots
 
 Honeyscanner is a vulnerability analyzer for honeypots designed to automatically attack a given honeypot, in order to determine if the honeypot is vulnerable to specific types of cyber attacks. It uses a variety of attacks, ranging from exploiting vulnerable software libraries to DoS, and fuzzing attacks. The analyzer then provides an evaluation report to the honeypot administrator, offering advice on how to enhance the security of the honeypot. Targeted toward security enthusiasts, open-source communities, and companies, Honeyscanner provides a much needed safety check for various honeypots.
@@ -40,7 +34,7 @@ The following instructions will guide you through the process of setting up Hone
 1. Download the Honeyscanner source code from GitHub. Open a tarminal and introduce the following command.
 
     ```bash
-    git clone https://github.com/honeynet/honeyscanner.git
+    git clone https://github.com/CBNamikaze/honeyscanner.git
     ```
 
 2. Navigate to the Honeyscanner's folder, install the required Python packages and activate the virtual environment.
@@ -66,4 +60,23 @@ Use the following examples as a reference for how to run `Honeyscanner`:
 ```bash
 python3 main.py --honeypot cowrie --honeypot_version 2.5.0 --target_ip 127.0.0.1 --port 2222 --username root --password 1234
 ```
+## Commands to Run
+# To Run Cowrie:
+```bash
+/home/cowrie/cowrie/bin/cowrie start
+```
+# To Stop Cowrie:
 
+```bash
+ /home/cowrie/cowrie/bin/cowrie stop
+```
+# To Activate venv:
+
+```bash
+source /home/cowrie/cowrie-env/bin/activate
+```
+# To Run HoneyScanner:
+
+```bash
+python3 /home/cowrie/honeyscanner/honeyscanner/main.py --honeypot cowrie --honeypot_version 2.5.0 --target_ip 127.0.0.1 --port 2222 --username root --password 1234```
+<br></br>
