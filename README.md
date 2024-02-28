@@ -1,29 +1,17 @@
 <h3>Commands to Run</h3>
-<li>To Run Cowrie: /home/cowrie/cowrie/bin/cowrie start</li>
+<li>To Run Cowrie: 
+    ```bash 
+    /home/cowrie/cowrie/bin/cowrie start
+    ```
+</li>
 <li>To Stop Cowrie: /home/cowrie/cowrie/bin/cowrie stop</li>
 <li>To Activate venv: source /home/cowrie/cowrie-env/bin/activate</li>
 <li>To Run HoneyScanner: python3 /home/cowrie/honeyscanner/honeyscanner/main.py --honeypot cowrie --honeypot_version 2.5.0 --target_ip 127.0.0.1 --port 2222 --username root --password 1234</li>
-This project was supported and funded by Google Summer of Code 2023. For more information about Honeyscanner in GSoC2023 click [here](https://summerofcode.withgoogle.com/archive/2023/projects/6oyTxlUo).
-
-<br />
-
-<div align="left">
-    <img src="./images/blackhat_logo.png" alt="Blackhat logo" width="400">
-</div>
-
-This project was presented at BlackHat Europe 2023 in London. For more information about Honeyscanner in BlackHat Europe click [here](https://www.blackhat.com/eu-23/arsenal/schedule/index.html#honeyscanner-a-vulnerability-analyzer-for-honeypots-35048).
+<br></br>
+<br></br>
 # Honeyscanner - A vulnerability analyzer for Honeypots
 
-[![Python 3.9.12](https://img.shields.io/badge/python-3.9.12-blue.svg)](https://www.python.org/downloads/release/python-3912/)
-[![Pipenv 2023.7.9](https://img.shields.io/badge/pipenv-2023.7.9-brightgreen.svg)](https://pipenv.pypa.io/)
-[![GitHub license](https://img.shields.io/github/license/honeynet/honeyscanner.svg)](https://github.com/honeynet/honeyscanner/blob/main/LICENSE)
-[![Github Issues](https://img.shields.io/github/issues/honeynet/honeyscanner.svg)](https://github.com/honeynet/honeyscanner/issues)
-
 Honeyscanner is a vulnerability analyzer for honeypots designed to automatically attack a given honeypot, in order to determine if the honeypot is vulnerable to specific types of cyber attacks. It uses a variety of attacks, ranging from exploiting vulnerable software libraries to DoS, and fuzzing attacks. The analyzer then provides an evaluation report to the honeypot administrator, offering advice on how to enhance the security of the honeypot. Targeted toward security enthusiasts, open-source communities, and companies, Honeyscanner provides a much needed safety check for various honeypots.
-
-### Video showcasing Honeyscanner against Cowrie v2.5.0
-
-<a href="https://www.youtube.com/watch?v=RHC3f67Ae6c" target="_blank"><img src="https://img.youtube.com/vi/RHC3f67Ae6c/0.jpg" alt="Honeyscanner vs Cowrie v2.5.0"></a>
 
 ### Architecture
 
