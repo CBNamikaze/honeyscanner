@@ -1,13 +1,8 @@
-<div align="center">
-    <img src="./images/honeyscanner_logo.png" alt="Honeyscanner logo" width="400">
-</div>
-
-<br />
-
-<div align="left">
-    <img src="./images/GSoC-Horizontal.png" alt="GSoC logo" width="400">
-</div>
-
+<h3>Commands to Run</h3>
+<li>To Run Cowrie: /home/cowrie/cowrie/bin/cowrie start</li>
+<li>To Stop Cowrie: /home/cowrie/cowrie/bin/cowrie stop</li>
+<li>To Activate venv: source /home/cowrie/cowrie-env/bin/activate</li>
+<li>To Run HoneyScanner: python3 /home/cowrie/honeyscanner/honeyscanner/main.py --honeypot cowrie --honeypot_version 2.5.0 --target_ip 127.0.0.1 --port 2222 --username root --password 1234</li>
 This project was supported and funded by Google Summer of Code 2023. For more information about Honeyscanner in GSoC2023 click [here](https://summerofcode.withgoogle.com/archive/2023/projects/6oyTxlUo).
 
 <br />
