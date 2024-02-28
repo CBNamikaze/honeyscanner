@@ -1,9 +1,5 @@
 <h3>Commands to Run</h3>
-<li>To Run Cowrie: 
-    ```bash 
-    /home/cowrie/cowrie/bin/cowrie start
-    ```
-</li>
+<li>To Run Cowrie: /home/cowrie/cowrie/bin/cowrie start</li>
 <li>To Stop Cowrie: /home/cowrie/cowrie/bin/cowrie stop</li>
 <li>To Activate venv: source /home/cowrie/cowrie-env/bin/activate</li>
 <li>To Run HoneyScanner: python3 /home/cowrie/honeyscanner/honeyscanner/main.py --honeypot cowrie --honeypot_version 2.5.0 --target_ip 127.0.0.1 --port 2222 --username root --password 1234</li>
@@ -63,20 +59,6 @@ The following instructions will guide you through the process of setting up Hone
 
 - To test Honeyscanner against the latest [Cowrie](https://github.com/cowrie/cowrie) version, you can use the official Docker Image [here](https://hub.docker.com/r/cowrie/cowrie), pull it locally and run a Docker container with it.
 
-- If you prefer to test Honeyscanner against [Kippo](https://github.com/desaster/kippo), you can use the following Docker Image in DockerHub [here](https://hub.docker.com/r/aristofanischionis/kippo).
-
-- For testing Honeyscanner against [Dionaea](https://github.com/DinoTools/dionaea), use the following Docker Image in DockerHub [here](https://hub.docker.com/r/dinotools/dionaea).
-
-- For testing Honeyscanner against [Conpot](https://github.com/mushorg/conpot), use the following Docker Image in DockerHub [here](https://hub.docker.com/r/honeynet/conpot). 
-
-- After running a Honeypot using Docker containers locally, you will be able to specify the following parameters: `--target_ip 127.0.0.1 --port 2222` when running the Honeyscanner.
-
-> **__NOTE__:** NEVER RUN `Honeyscanner` AGAINST HONEYPOTS YOU DO NOT OWN, OR YOU DO NOT HAVE EXPLICIT PERMISSION TO TEST.
-
-> **__NOTE__:** Currently `Honeyscanner` can actively attack the `Dionaea` and the `Conpot` honeypots only by using the DoS attack module. The way it works is that initially `Honeyscanner` uses nmap to find the open ports on the targeted honeypot, then tries to DoS all ports simultaneously. In order to run the nmap scanner, run `Honeyscanner` with root privileges for scanning `Dionaea` and `Conpot`. This provides nmap with deeper view of the services that run behind each port on the honeypot.
-
-> **__NOTE__:** For `Dionaea` only version 0.11.0 is supported at this stage of `Honeyscanner`. For `Conpot`, all versions up to `0.6.0` are supported.
-
 ## Usage
 
 Use the following examples as a reference for how to run `Honeyscanner`:
@@ -84,32 +66,4 @@ Use the following examples as a reference for how to run `Honeyscanner`:
 ```bash
 python3 main.py --honeypot cowrie --honeypot_version 2.5.0 --target_ip 127.0.0.1 --port 2222 --username root --password 1234
 ```
-```bash
-python3 main.py --honeypot kippo --honeypot_version 0.9 --target_ip 127.0.0.1 --port 2222
-```
-```bash
-sudo python3 main.py --honeypot dionaea --honeypot_version 0.11.0 --target_ip 127.0.0.1 --port 2323
-```
-```bash
-sudo python3 main.py --honeypot conpot --honeypot_version 0.6.0 --target_ip 127.0.0.1 --port 2323
-```
 
-## Contributors
-
-For information on Contributors and How to contribute see our [Contributors file](./CONTRIBUTORS.md).
-
-## Versioning
-
-The [SemVer](http://semver.org/spec/v2.0.0.html) is used for versioning. For the latest available version of Honeyscanner, see page [releases](https://github.com/honeynet/honeyscanner/releases).
-
-## Release History
-
-Honeyscanner does not have any release yet.
-
-## Contact
-
-Please use [Github issues](https://github.com/honeynet/honeyscanner/issues) to report any issues or for questions. 
-
-## License
-
-Distributed under the **MIT license**. See [LICENSE](./LICENSE) for more information.
