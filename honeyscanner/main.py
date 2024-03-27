@@ -72,18 +72,6 @@ def main():
     sleep_time = 0
     print(f"Starting in {sleep_time} seconds...")
     time.sleep(sleep_time)
-
-    # try:  
-    #     honeyscanner.run_all_attacks()  
-    # except Exception as e:  
-    #     print(f"An error occurred during the attacks: {e}")
-    #     return
-
-    # try:
-    #     honeyscanner.generate_evaluation_report()  
-    # except Exception as e:  
-    #     print(f"An error occurred during report generation: {e}")
-    #     return
     honeyscanner.run_all_attacks()  
     honeyscanner.generate_evaluation_report()  
 
@@ -91,5 +79,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# TODO: fix the report

@@ -31,38 +31,3 @@ DoSAllOpenPorts:
   Time to execute: 27 seconds
 
   Number of threads used: 40
-
- 
-Overall Score: 
-============== 
-TODO: Add overall score 
-
-
-Successful Attacks: 
-=================== 
-TODO: Add successful attacks 
-
-
-Failed Attacks: 
-================ 
-TODO: Add failed attacks 
-
-
-Attack Success Rate: 
-==================== 
-TODO: Add attack success rate 
-
-
-Total Potential CVEs: 211 
-
-
-Actionable Recommendations: 
-=========================== 
-TODO: Add actionable recommendations 
-
-
-Detailed Report: 
-================ 
-TODO: Add detailed report 
-
-
