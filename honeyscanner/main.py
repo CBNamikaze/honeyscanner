@@ -4,17 +4,10 @@ import argparse
 from core import Honeyscanner
 
 def print_ascii_art_honeyscanner():
-    ascii_art = r"""
-
-  ___ ___                                                                             
- /   |   \  ____   ____   ____ ___.__. ______ ____ _____    ____   ____   ___________ 
-/    ~    \/  _ \ /    \_/ __ <   |  |/  ___// ___\\__  \  /    \ /    \_/ __ \_  __ \
-\    Y    (  <_> )   |  \  ___/\___  |\___ \\  \___ / __ \|   |  \   |  \  ___/|  | \/
- \___|_  / \____/|___|  /\___  > ____/____  >\___  >____  /___|  /___|  /\___  >__|   
-       \/             \/     \/\/         \/     \/     \/     \/     \/     \/       
-
+    message = r"""
+    Vulnerability Assessment Initiated!
         """
-    print(ascii_art)
+    print(message)
 
 def sanitize_string(s):  
     s = s.strip()  

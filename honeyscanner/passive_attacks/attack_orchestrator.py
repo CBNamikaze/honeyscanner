@@ -4,39 +4,23 @@ from .vuln_analyzer import VulnerableLibrariesAnalyzer
 from .static_analyzer import StaticAnalyzer
 from .container_security_scanner import ContainerSecurityScanner
 
-def print_ascii_art_VulnAnalyzer():
-    ascii_art = r"""
-____   ____      .__              _____                   .__                                 
-\   \ /   /__ __ |  |    ____    /  _  \    ____  _____   |  |  ___.__.________  ____ _______ 
- \   Y   /|  |  \|  |   /    \  /  /_\  \  /    \ \__  \  |  | <   |  |\___   /_/ __ \\_  __ \
-  \     / |  |  /|  |__|   |  \/    |    \|   |  \ / __ \_|  |__\___  | /    / \  ___/ |  | \/
-   \___/  |____/ |____/|___|  /\____|__  /|___|  /(____  /|____// ____|/_____ \ \___  >|__|   
-                            \/         \/      \/      \/       \/           \/     \/        
-
+def print_message_VulnAnalyzer():
+    message = r"""
+          Vulnerability Analyzer
         """
-    print(ascii_art)
+    print(message)
 
-def print_ascii_art_StaticHoney():
-    ascii_art = r"""
-  _________ __          __  .__         ___ ___                             
- /   _____//  |______ _/  |_|__| ____  /   |   \  ____   ____   ____ ___.__.
- \_____  \\   __\__  \\   __\  |/ ___\/    ~    \/  _ \ /    \_/ __ <   |  |
- /        \|  |  / __ \|  | |  \  \___\    Y    (  <_> )   |  \  ___/\___  |
-/_______  /|__| (____  /__| |__|\___  >\___|_  / \____/|___|  /\___  > ____|
-        \/           \/             \/       \/             \/     \/\/     
+def print_message_StaticHoney():
+    message = r"""
+          Static Attacks
     """
-    print(ascii_art)
+    print(message)
 
-def print_ascii_art_TrivyScanner():
-    ascii_art = r"""
-___________      .__               _________                                         
-\__    ___/______|__|__  _____.__./   _____/ ____ _____    ____   ____   ___________ 
-  |    |  \_  __ \  \  \/ <   |  |\_____  \_/ ___\\__  \  /    \ /    \_/ __ \_  __ \
-  |    |   |  | \/  |\   / \___  |/        \  \___ / __ \|   |  \   |  \  ___/|  | \/
-  |____|   |__|  |__| \_/  / ____/_______  /\___  >____  /___|  /___|  /\___  >__|   
-                           \/            \/     \/     \/     \/     \/     \/       
+def print_message_TrivyScanner():
+    message = r"""
+          Trivy Scanner 
     """
-    print(ascii_art)
+    print(message)
 
 class AttackOrchestrator:
     def __init__(self, honeypot):
@@ -52,7 +36,7 @@ class AttackOrchestrator:
 
     def run_attacks(self):
         # Run VulnAnalyzer
-        print_ascii_art_VulnAnalyzer()
+        print_message_VulnAnalyzer()
         analyzer = VulnerableLibrariesAnalyzer(self.honeypot.name, self.honeypot.owner)
         version = self.honeypot.version
         versions_list = self.honeypot.versions_list
@@ -61,13 +45,13 @@ class AttackOrchestrator:
         print("Finished VulnAnalyzer!")
 
         # Run Static Analyzer
-        print_ascii_art_StaticHoney()
+        print_message_StaticHoney()
         analyzer = StaticAnalyzer(self.honeypot.name, self.honeypot.source_code_url, self.honeypot.version)
         self.static_analysis_report = analyzer.run()
         print("Finished StaticHoney!")
 
         # Run Trivy Scanner
-        print_ascii_art_TrivyScanner()
+        print_message_TrivyScanner()
         owner = self.honeypot.owner
         # kippo doesn't have official Docker images, so I am using my own
         if self.honeypot.name == "kippo":
